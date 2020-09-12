@@ -1,0 +1,27 @@
+repos:
+  - repo: local
+    hooks:
+      - id: rubocop_autocorrect
+        name: rubocop_autocorrect
+        entry: bash -c 'bundle exec rubocop --safe-auto-correct'
+        language: system
+        pass_filenames: false
+      - id: brakeman
+        name: brakeman
+        entry: bundle exec brakeman --no-pager .
+        language: system
+        pass_filenames: false
+      - id: reek
+        name: reek
+        entry: bash -c 'bundle exec reek app lib config spec -c .reek.yml'
+        language: system
+        pass_filenames: false
+      - id: rails_best_practices
+        name: rails_best_practices
+        entry: bash -c 'bundle exec rails_best_practices . -c config/rails_best_practices.yml'
+        language: system
+      - id: rspec_spec
+        name: rspec_spec
+        entry: bash -c 'bundle exec rspec spec'
+        language: system
+        pass_filenames: false
