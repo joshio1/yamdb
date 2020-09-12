@@ -1,1 +1,9 @@
 inherit_from: .rubocop_todo.yml
+
+Style/Documentation:
+  Exclude:
+    - 'db/migrate/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'lib/tasks/auto_annotate_models.rake'

@@ -5,6 +5,19 @@ detectors:
     exclude:
     - ApplicationController
     - ApplicationHelper
-    - ApplicationJob
-    - ApplicationRecord
-    - Yamdb::Application
+
+  DuplicateMethodCall:
+    exclude:
+      - UsersController#create
+      - UsersController#update
+
+  TooManyStatements:
+    exclude:
+      - UsersController#create
+      - UsersController#update
+      - UsersController#destroy
+
+directories:
+  "app/controllers":
+    InstanceVariableAssumption:
+      enabled: false
