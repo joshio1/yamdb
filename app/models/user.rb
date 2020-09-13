@@ -11,4 +11,10 @@
 #
 class User < ApplicationRecord
   has_secure_password
+
+  # validations ...............................................................
+
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+
+  # instance methods ..........................................................
 end

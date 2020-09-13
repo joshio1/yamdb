@@ -1,37 +1,40 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="container">
+  <%= form_with(model: user, local: true, :html => {:class => "form-horizontal center"}) do |form| %>
+      <% if user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+          <ul>
+            <% user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= form.label :email, class: "control-label" %>
+        <%= form.text_field :email, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password, class: "control-label" %>
+        <%= form.password_field :password, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password_confirmation, class: "control-label" %>
+        <%= form.password_field :password_confirmation, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :age, class: "control-label" %>
+        <%= form.number_field :age, class: "form-control" %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Signup", class: "btn btn-default btn-primary" %>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Signup" %>
-  </div>
-<% end %>
+</div>

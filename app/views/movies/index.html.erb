@@ -1,37 +1,40 @@
-<% if current_user %>
-  Logged in as <%= current_user.email %> having age <%= current_user.age %>.
-  <%= link_to "Log Out", logout_path, method: :delete %>
-<% end %>
-<h1>Movies</h1>
-<table id="movies_tbl" class="table table-bordered table-striped">
-  <thead>
-  <tr>
-    <th>
-      Movie Name
-    </th>
-    <th>
-      Rating
-    </th>
-    <th>
-      Release Date
-    </th>
-    <th>
-      Popularity
-    </th>
-    <th>
-      Vote Count
-    </th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @movies.each do |movie| %>
-    <tr>
-      <td><%= movie.title %></td>
-      <td><%= movie.rating %></td>
-      <td><%= movie.release_date %></td>
-      <td><%= movie.popularity %></td>
-      <td><%= movie.vote_average %></td>
-    </tr>
+<div class="container">
+  <% if current_user %>
+    Logged in as <%= current_user.email %> having age <%= current_user.age %>.
+    <%= link_to "Log Out", logout_path, method: :delete %>
   <% end %>
-  </tbody>
-</table>
+  <h1>Movies</h1>
+  <table id="movies_tbl" class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>
+        Movie Name
+      </th>
+      <th>
+        Rating
+      </th>
+      <th>
+        Release Date
+      </th>
+      <th>
+        Popularity
+      </th>
+      <th>
+        Vote Count
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.rating %></td>
+        <td><%= movie.release_date %></td>
+        <td><%= movie.popularity %></td>
+        <td><%= movie.vote_average %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+

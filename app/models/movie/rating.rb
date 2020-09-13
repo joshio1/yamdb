@@ -3,6 +3,8 @@ class Movie
   class Rating
     include ActiveModel::Model
 
+    # constants ...............................................................
+
     RATING_MAP = {
       NR: 0,
       G: 1,
@@ -11,12 +13,18 @@ class Movie
       R: 4
     }.freeze
 
+    # accessors ...............................................................
+
     attr_reader :code
+
+    # initializer .............................................................
 
     def initialize(code)
       @code = code
       @code = :NR if @code.blank?
     end
+
+    # instance methods ........................................................
 
     def certification_level
       RATING_MAP[@code]
@@ -25,6 +33,8 @@ class Movie
     def display_name
       @code.to_s
     end
+
+    # class methods ...........................................................
 
     def self.from(certification_level: nil, certification_code: nil)
       if certification_level.present?
