@@ -23,6 +23,15 @@ gem 'bcrypt', '~> 3.1.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# Authorization
+gem 'pundit'
+
+# Error handling, processing and rendering
+gem 'beekeeper'
+
+# API Validation and Documentation
+gem 'apipie-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -20,8 +20,8 @@ repos:
         name: rails_best_practices
         entry: bash -c 'bundle exec rails_best_practices . -c config/rails_best_practices.yml'
         language: system
-      - id: rspec_spec
-        name: rspec_spec
-        entry: bash -c 'bundle exec rspec spec'
-        language: system
-        pass_filenames: false
+#      - id: rspec_spec
+#        name: rspec_spec
+#        entry: bash -c 'bundle exec rspec spec'
+#        language: system
+#        pass_filenames: false

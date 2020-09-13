@@ -10,12 +10,35 @@ detectors:
     exclude:
       - UsersController#create
       - UsersController#update
+      - ApplicationController#current_user
+      - HttpWrapper#self.request
+      - authenticate
+
+  NilCheck:
+    exclude:
+      - ApplicationController#logged_in?
 
   TooManyStatements:
     exclude:
       - UsersController#create
       - UsersController#update
       - UsersController#destroy
+      - HttpWrapper#self.request
+      - Tmdb#self.movie_results
+      - authenticate
+
+  Attribute:
+    exclude:
+      - Movie
+      - Tmdb::Movie
+      - Tmdb::ReleaseDate
+      - Tmdb::ReleaseDateResult
+      - Tmdb::ResponseWrapper
+
+  ControlParameter:
+    exclude:
+      - HttpWrapper#self.request
+      - YamdbError#initialize
 
 directories:
   "app/controllers":

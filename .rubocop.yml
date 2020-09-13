@@ -4,6 +4,10 @@ Style/Documentation:
   Exclude:
     - 'db/migrate/**/*'
 
+Metrics/AbcSize:
+  Exclude:
+    - 'app/policies/movie_policy.rb'
+
 Metrics/BlockLength:
   Exclude:
     - 'lib/tasks/auto_annotate_models.rake'
