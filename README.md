@@ -22,6 +22,10 @@ Yet Another Movie Database!
     * At this point, you should be able to enter into the rails console by running `bundle exec rails c`
     * Similarly, you should be able to login into the Postgres console using `bundle exec rails db`
     * If you have `rails` on you PATH, you should be able to run the above commands directly using `rails` without the bundle context. For eg. `rails c`
+* Setup `pre-commit` hooks using these commands:
+    * `pip install pre-commit`
+    * `pre-commit install`
+    * Now, whenever you commit anything, pre-commit checks will be run automatically.
     
 ### Execute Unit Tests
 
