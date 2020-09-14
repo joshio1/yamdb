@@ -12,11 +12,12 @@ Yet Another Movie Database!
 ### Steps:
 
 * Clone this repository using SSH or HTTP.
-* Copy database.yml.sample to database.yml and application.yml.sample to application.yml by running these commands:
+* Copy database.yml.sample to database.yml and secrets.yml.sample to secrets.yml by running these commands:
 
     ```shell script
-    cp config/database.yml.sample config/database.yml && cp config/application.yml.sample config/application.yml
+    cp config/database.yml.sample config/database.yml && cp config/secrets.yml.sample config/secrets.yml
     ```
+* Replace `YOUR_TMDB_KEY` with your TMDB API KEY in secrets.yml
 * Run `bundle install` to download all the gems specified in the Gemfile
 * Run `bundle exec rails db:setup` to create development database, test database and run seeds on development database.
     * At this point, you should be able to enter into the rails console by running `bundle exec rails c`
@@ -25,7 +26,7 @@ Yet Another Movie Database!
 * Setup `pre-commit` hooks using these commands:
     * `pip install pre-commit`
     * `pre-commit install`
-    * Now, whenever you commit anything, pre-commit checks will be run automatically.
+    * Now, whenever you commit anything, `pre-commit` checks will be run automatically.
     
 ### Execute Unit Tests
 
